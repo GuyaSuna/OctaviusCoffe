@@ -8,8 +8,15 @@ export default function Home() {
   const products = [
     { id: 1, name: "Espresso", img: "/cafe-expresso.webp", price: "$4" },
     { id: 2, name: "Cappuccino", img: "/Cappuccino2.jpg", price: "$5" },
-    { id: 3, name: "Latte", img: "/latte.jpg", price: "$5.5" },
+    { id: 3, name: "Latte", img: "/latte.avif", price: "$5.5" },
+    { id: 4, name: "Mocha", img: "/Mocha.jpg", price: "$6" },
+    { id: 5, name: "Macchiato", img: "/macchiato.jpg", price: "$4.5" },
+    { id: 6, name: "Flat White", img: "/flat-white.jpg", price: "$5.2" },
+    { id: 7, name: "Iced Coffee", img: "/iced-coffee.jpg", price: "$4.8" },
+    { id: 8, name: "Americano", img: "/americano.jpg", price: "$3.8" },
+    { id: 9, name: "Affogato", img: "/affogato.jpg", price: "$5.5" },
   ];
+  
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
@@ -61,27 +68,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="products" className="py-16 px-8 bg-[#FAF3E0] text-[#2E5237]">
+      <section id="products" className="py-16 px-8 bg-[#FAF3E0] text-[#2E5237] overflow-hidden">
   <h2 className="text-3xl font-bold text-center mb-12">Our Products</h2>
 
   <div className="relative">
     <div
-      className="flex transition-transform duration-500"
+      className="flex transition-transform duration-500 min-w-0"
       style={{ transform: `translateX(-${currentIndex * 100}%)` }}
     >
       {products.map((product) => (
         <div
           key={product.id}
-          className="flex-shrink-0 w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 px-8"
+          className="flex-shrink-0 w-1/4 px-4" // Asegura que cada elemento ocupe 1/4 del ancho
         >
           <div className="bg-white shadow-xl rounded-lg overflow-hidden hover:scale-105 transition-transform">
             <div
               className="w-full h-56 bg-cover bg-center"
               style={{
-                backgroundImage: `url(${product.img})`, 
-                backgroundPosition: "center", 
-                backgroundSize: "fill",
-                backgroundRepeat: "no-repeat"
+                backgroundImage: `url(${product.img})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
               }}
             ></div>
             <div className="p-6 text-center">
@@ -107,6 +114,7 @@ export default function Home() {
     </button>
   </div>
 </section>
+
 
 
     <section className="py-16 px-8 bg-[#2E5237] text-white">
