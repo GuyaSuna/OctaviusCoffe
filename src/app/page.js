@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Carousel from "@/Components/Carouselle";
 export default function Home() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -84,98 +85,10 @@ export default function Home() {
 </section>
 
 
-      <section id="products" className="py-16 px-8 text-[#2E5237] overflow-hidden">
-  <h2 className="text-3xl font-bold text-center mb-12">Our Products</h2>
+<Carousel products={products}/>
 
-  <div className="relative">
-    <div
-      className="flex transition-transform duration-500 min-w-0"
-      style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-    >
-      {products.map((product) => (
-        <div
-          key={product.id}
-          className="flex-shrink-0 w-1/4 px-4" 
-        >
-          <div className="bg-white shadow-xl rounded-lg overflow-hidden hover:scale-105 transition-transform">
-            <div
-              className="w-full h-56 bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${product.img})`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
-            <div className="p-6 text-center">
-              <h3 className="text-2xl font-semibold mb-3">{product.name}</h3>
-              <p className="text-[#167E59] font-bold text-xl">{product.price}</p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
 
-    <button
-      onClick={prevSlide}
-      className="absolute top-1/2 left-4 transform -translate-y-1/2 text-3xl text-[#2E5237] bg-white rounded-full shadow-lg p-4"
-    >
-      &#8592;
-    </button>
-    <button
-      onClick={nextSlide}
-      className="absolute top-1/2 right-4 transform -translate-y-1/2 text-3xl text-[#2E5237] bg-white rounded-full shadow-lg p-4"
-    >
-      &#8594;
-    </button>
-  </div>
-</section>
-
-<section id="products" className="py-16 px-8  text-[#2E5237] overflow-hidden">
-
-  <div className="relative">
-    <div
-      className="flex transition-transform duration-500 min-w-0"
-      style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-    >
-      {products.map((product) => (
-        <div
-          key={product.id}
-          className="flex-shrink-0 w-1/4 px-4" 
-        >
-          <div className="bg-white shadow-xl rounded-lg overflow-hidden hover:scale-105 transition-transform">
-            <div
-              className="w-full h-56 bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${product.img})`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
-            <div className="p-6 text-center">
-              <h3 className="text-2xl font-semibold mb-3">{product.name}</h3>
-              <p className="text-[#167E59] font-bold text-xl">{product.price}</p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <button
-      onClick={prevSlide}
-      className="absolute top-1/2 left-4 transform -translate-y-1/2 text-3xl text-[#2E5237] bg-white rounded-full shadow-lg p-4"
-    >
-      &#8592;
-    </button>
-    <button
-      onClick={nextSlide}
-      className="absolute top-1/2 right-4 transform -translate-y-1/2 text-3xl text-[#2E5237] bg-white rounded-full shadow-lg p-4"
-    >
-      &#8594;
-    </button>
-  </div>
-</section>
+<Carousel products={products}/>
 
 
 
@@ -206,7 +119,6 @@ export default function Home() {
         key={testimonial.id}
         className="relative text-white shadow-xl rounded-lg overflow-hidden max-w-lg mx-auto"
       >
-        {/* Fondo de imagen */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -214,10 +126,8 @@ export default function Home() {
           }}
         ></div>
 
-        {/* Overlay negro semi-transparente cubriendo la imagen */}
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-        {/* Contenido de texto con espacio interno */}
         <div className="relative p-8 text-center">
           <h3 className="text-2xl font-semibold">{testimonial.name}</h3>
           <p className="italic mt-6 text-lg">{testimonial.review}</p>
