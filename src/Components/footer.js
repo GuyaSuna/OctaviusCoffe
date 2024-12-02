@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#2E5237] text-white py-6">
+    <footer className="bg-black/80  text-white py-6">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} <span className="font-bold">Octavius Cafe</span>. All rights reserved.
