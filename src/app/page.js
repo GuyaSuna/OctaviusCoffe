@@ -1,20 +1,20 @@
 'use client'
-import Image from "next/image";
-import { useState, useEffect } from "react";
 import Carousel from "@/Components/Carouselle";
+import SectionOne from "@/Components/SectionOne";
+import SectionTwo from "@/Components/SectionTwo";
 export default function Home() {
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+
 
   const products = [
     { id: 1, name: "Espresso", img: "/cafe-expresso.webp", price: "$4" },
     { id: 2, name: "Cappuccino", img: "/Cappuccino.jpg", price: "$5" },
     { id: 3, name: "Latte", img: "/latte.avif", price: "$5.5" },
     { id: 4, name: "Mocha", img: "/Mocha.jpg", price: "$6" },
-    { id: 5, name: "Macchiato", img: "/macchiato.jpg", price: "$4.5" },
-    { id: 6, name: "Flat White", img: "/flat-white.jpg", price: "$5.2" },
-    { id: 7, name: "Iced Coffee", img: "/iced-coffee.jpg", price: "$4.8" },
-    { id: 8, name: "Americano", img: "/americano.jpg", price: "$3.8" },
+    { id: 5, name: "Macchiato", img: "/macciato.avif", price: "$4.5" },
+    { id: 6, name: "Flat White", img: "/flatWhite.webp", price: "$5.2" },
+    { id: 7, name: "Iced Coffee", img: "/icedCoffee3.jpg", price: "$4.8" },
+    { id: 8, name: "Americano", img: "/AmericanCoffee2.jpeg", price: "$3.8" },
     { id: 9, name: "Affogato", img: "/affogato.jpg", price: "$5.5" },
   ];
   
@@ -33,15 +33,7 @@ export default function Home() {
     { id: 12, name: "Brownie", img: "/brownie.jpg", price: "$3.2" },
   ];
   
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + products.length) % products.length
-    );
-  };
+  
   return (
     <div className="min-h-screen  bg-gradient-to-r from-[#FAF3E0] to-[#9D6D54] text-white font-sans">
 
@@ -84,13 +76,16 @@ export default function Home() {
   `}</style>
 </section>
 
+<SectionOne/>
+<SectionTwo/>
+
+
+
+
 
 <Carousel products={products}/>
 
-
 <Carousel products={products}/>
-
-
 
 <section className="py-16 px-8 text-white">
   <h2 className="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
@@ -136,24 +131,7 @@ export default function Home() {
     ))}
   </div>
 </section>
-
-
-
-
-
-
-
-      {/* <section className="py-16 px-8 bg-[#167E59] text-white text-center">
-        <h2 className="text-3xl font-bold mb-6">
-          Join the Octavius Cafe Club Today!
-        </h2>
-        <p className="text-lg mb-6">
-          Enjoy exclusive discounts, early product launches, and more.
-        </p>
-        <button className="bg-[#FFD700] text-[#2E5237] font-bold py-3 px-8 rounded-full hover:scale-105 transition-transform">
-          Sign Up Now
-        </button>
-      </section> */}
+     
     </div>
   );
 }
