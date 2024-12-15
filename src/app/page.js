@@ -82,10 +82,13 @@ export default function Home() {
 
 
 
+<div className="max-w-screen-xl mx-auto">
+  <Carousel products={products} />
+</div>
 
-<Carousel products={products}/>
-
-<Carousel products={products}/>
+<div className="max-w-screen-xl mx-auto">
+  <Carousel products={products} />
+</div>
 
 <section className="py-16 px-8 text-white">
   <h2 className="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
